@@ -9,3 +9,7 @@ class RandomMail:
         return mail
 
 
+random_mail = RandomMail()
+mail = random_mail.generate_mail()
+print(mail)
+gi
