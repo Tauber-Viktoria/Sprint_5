@@ -1,5 +1,4 @@
 from selenium import webdriver
-from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
@@ -8,17 +7,19 @@ from locators import GoPageLocators
 
 
 class TestGoToPage:
+    @staticmethod
+    def login(driver):
+        driver.find_element(*GoPageLocators.LOGIN_FIELD).send_keys(login)
+        driver.find_element(*GoPageLocators.PASSWORD_FIELD).send_keys(password)
+        driver.find_element(*GoPageLocators.LOGIN_BUTTON).click()
+        WebDriverWait(driver, 5).until(
+            expected_conditions.visibility_of_element_located(GoPageLocators.ORDER_BUTTON))
+
     def test_go_to_personal_account_from_main(self, driver):
         driver = webdriver.Chrome()
         driver.get("https://stellarburgers.nomoreparties.site")
         driver.find_element(*GoPageLocators.LOGIN_TO_ACCOUNT_BUTTON).click()
-
-        driver.find_element(*GoPageLocators.LOGIN_FIELD).send_keys(login)
-        driver.find_element(*GoPageLocators.PASSWORD_FIELD).send_keys(password)
-        driver.find_element(*GoPageLocators.LOGIN_BUTTON).click()
-
-        WebDriverWait(driver, 5).until(
-            expected_conditions.visibility_of_element_located(GoPageLocators.ORDER_BUTTON))
+        self.login(driver)
 
         driver.find_element(*GoPageLocators.PERSONAL_ACCOUNT).click()
         WebDriverWait(driver, 5).until(
@@ -31,13 +32,7 @@ class TestGoToPage:
         driver = webdriver.Chrome()
         driver.get("https://stellarburgers.nomoreparties.site")
         driver.find_element(*GoPageLocators.LOGIN_TO_ACCOUNT_BUTTON).click()
-
-        driver.find_element(*GoPageLocators.LOGIN_FIELD).send_keys(login)
-        driver.find_element(*GoPageLocators.PASSWORD_FIELD).send_keys(password)
-        driver.find_element(*GoPageLocators.LOGIN_BUTTON).click()
-
-        WebDriverWait(driver, 5).until(
-            expected_conditions.visibility_of_element_located(GoPageLocators.ORDER_BUTTON))
+        self.login(driver)
 
         driver.find_element(*GoPageLocators.PERSONAL_ACCOUNT).click()
         WebDriverWait(driver, 5).until(
@@ -54,15 +49,9 @@ class TestGoToPage:
         driver = webdriver.Chrome()
         driver.get("https://stellarburgers.nomoreparties.site")
         driver.find_element(*GoPageLocators.LOGIN_TO_ACCOUNT_BUTTON).click()
+        self.login(driver)
 
-        driver.find_element(*GoPageLocators.LOGIN_FIELD).send_keys(login)
-        driver.find_element(*GoPageLocators.PASSWORD_FIELD).send_keys(password)
-        driver.find_element(*GoPageLocators.LOGIN_BUTTON).click()
-
-        WebDriverWait(driver, 5).until(
-            expected_conditions.visibility_of_element_located(GoPageLocators.ORDER_BUTTON))
-
-        driver.find_element(By.XPATH, "//p[text()='Личный Кабинет']").click()
+        driver.find_element(*GoPageLocators.PERSONAL_ACCOUNT).click()
         WebDriverWait(driver, 5).until(
             expected_conditions.visibility_of_element_located(GoPageLocators.PROFILE))
 
@@ -77,13 +66,7 @@ class TestGoToPage:
         driver = webdriver.Chrome()
         driver.get("https://stellarburgers.nomoreparties.site")
         driver.find_element(*GoPageLocators.LOGIN_TO_ACCOUNT_BUTTON).click()
-
-        driver.find_element(*GoPageLocators.LOGIN_FIELD).send_keys(login)
-        driver.find_element(*GoPageLocators.PASSWORD_FIELD).send_keys(password)
-        driver.find_element(*GoPageLocators.LOGIN_BUTTON).click()
-
-        WebDriverWait(driver, 5).until(
-            expected_conditions.visibility_of_element_located(GoPageLocators.ORDER_BUTTON))
+        self.login(driver)
 
         driver.find_element(*GoPageLocators.PERSONAL_ACCOUNT).click()
         WebDriverWait(driver, 5).until(
