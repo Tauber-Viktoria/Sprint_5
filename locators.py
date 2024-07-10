@@ -34,3 +34,20 @@ class GoPageLocators:
     CONSTRUCTOR = (By.XPATH, "//p[text()='Конструктор']")
     LOGO = (By.XPATH, "//*[@id='root']/div/header/nav/div")
     EXIT_BUTTON = (By.XPATH, "//button[text()='Выход']")
+
+# локаторы для контструктора
+class ConstructorLocators:
+    LOGIN_TO_ACCOUNT_BUTTON = (By.XPATH, "//button[text()='Войти в аккаунт']")
+    LOGIN_FIELD = (By.XPATH, "//input[@name='name']")
+    PASSWORD_FIELD = (By.XPATH, "//input[@name='Пароль']")
+    LOGIN_BUTTON = (By.XPATH, "//button[text()='Войти']")
+    ORDER_BUTTON = (By.XPATH, "//button[text()='Оформить заказ']")
+    SAUCES = (By.XPATH, '//*[@id="root"]/div/main/section[1]/div[1]/div[2]/span')
+    BUNS = (By.XPATH, '//*[@id="root"]/div/main/section[1]/div[1]/div[1]/span')
+    FILLINGS = (By.XPATH, '//*[@id="root"]/div/main/section[1]/div[1]/div[3]/span')
+
+    PERSONAL_ACCOUNT = (By.XPATH, "//p[text()='Личный Кабинет']")
+    PROFILE = (By.XPATH, "//a[text()='Профиль']")
+    CONSTRUCTOR = (By.XPATH, "//p[text()='Конструктор']")
+    LOGO = (By.XPATH, "//*[@id='root']/div/header/nav/div")
+    EXIT_BUTTON = (By.XPATH, "//button[text()='Выход']")
