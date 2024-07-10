@@ -13,9 +13,12 @@ class RegistrationLocators:
 
 # локаторы для активации
 class LoginLocators:
-    LOGIN_BUTTON = (By.XPATH, "//button[text()='Войти в аккаунт']")
+    LOGIN_TO_ACCOUNT_BUTTON = (By.XPATH, "//button[text()='Войти в аккаунт']")
     LOGIN_FIELD = (By.XPATH, "//input[@name='name']")
     PASSWORD_FIELD = (By.XPATH, "//input[@name='Пароль']")
     LOGIN_BUTTON = (By.XPATH, "//button[text()='Войти']")
-    BUTTON = (By.XPATH, "//button[text()='Оформить заказ']")
+    PERSONAL_ACCOUNT = (By.XPATH, "//p[text()='Личный Кабинет']")
+    ORDER_BUTTON = (By.XPATH, "//button[text()='Оформить заказ']")
+    LOGIN_LINK = (By.XPATH, "//a[text()='Войти']")
+
 
