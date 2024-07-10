@@ -1,5 +1,5 @@
 from selenium import webdriver
-from selenium.webdriver.common.by import By
+
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
@@ -18,7 +18,7 @@ class TestLogin:
         driver.find_element(*LoginLocators.LOGIN_BUTTON).click()
 
         WebDriverWait(driver, 5).until(
-            expected_conditions.visibility_of_element_located((LoginLocators.ORDER_BUTTON)))
+            expected_conditions.visibility_of_element_located(LoginLocators.ORDER_BUTTON))
 
         assert driver.current_url == 'https://stellarburgers.nomoreparties.site/'
         driver.quit()
@@ -27,12 +27,13 @@ class TestLogin:
         driver = webdriver.Chrome()
         driver.get("https://stellarburgers.nomoreparties.site")
         driver.find_element(*LoginLocators.PERSONAL_ACCOUNT).click()
+
         driver.find_element(*LoginLocators.LOGIN_FIELD).send_keys(login)
         driver.find_element(*LoginLocators.PASSWORD_FIELD).send_keys(password)
         driver.find_element(*LoginLocators.LOGIN_BUTTON).click()
 
         WebDriverWait(driver, 5).until(
-            expected_conditions.visibility_of_element_located((LoginLocators.ORDER_BUTTON)))
+            expected_conditions.visibility_of_element_located(LoginLocators.ORDER_BUTTON))
 
         assert driver.current_url == 'https://stellarburgers.nomoreparties.site/'
         driver.quit()
@@ -47,7 +48,7 @@ class TestLogin:
         driver.find_element(*LoginLocators.LOGIN_BUTTON).click()
 
         WebDriverWait(driver, 5).until(
-            expected_conditions.visibility_of_element_located((LoginLocators.ORDER_BUTTON)))
+            expected_conditions.visibility_of_element_located(LoginLocators.ORDER_BUTTON))
 
         assert driver.current_url == 'https://stellarburgers.nomoreparties.site/'
         driver.quit()
@@ -63,7 +64,7 @@ class TestLogin:
         driver.find_element(*LoginLocators.LOGIN_BUTTON).click()
 
         WebDriverWait(driver, 5).until(
-            expected_conditions.visibility_of_element_located((LoginLocators.ORDER_BUTTON)))
+            expected_conditions.visibility_of_element_located(LoginLocators.ORDER_BUTTON))
 
         assert driver.current_url == 'https://stellarburgers.nomoreparties.site/'
         driver.quit()

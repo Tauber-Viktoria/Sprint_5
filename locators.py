@@ -22,3 +22,15 @@ class LoginLocators:
     LOGIN_LINK = (By.XPATH, "//a[text()='Войти']")
 
 
+# локаторы для переходов
+class GoPageLocators:
+    LOGIN_TO_ACCOUNT_BUTTON = (By.XPATH, "//button[text()='Войти в аккаунт']")
+    LOGIN_FIELD = (By.XPATH, "//input[@name='name']")
+    PASSWORD_FIELD = (By.XPATH, "//input[@name='Пароль']")
+    LOGIN_BUTTON = (By.XPATH, "//button[text()='Войти']")
+    ORDER_BUTTON = (By.XPATH, "//button[text()='Оформить заказ']")
+    PERSONAL_ACCOUNT = (By.XPATH, "//p[text()='Личный Кабинет']")
+    PROFILE = (By.XPATH, "//a[text()='Профиль']")
+    CONSTRUCTOR = (By.XPATH, "//p[text()='Конструктор']")
+    LOGO = (By.XPATH, "//*[@id='root']/div/header/nav/div")
+    EXIT_BUTTON = (By.XPATH, "//button[text()='Выход']")
