@@ -35,6 +35,7 @@ class GoPageLocators:
     LOGO = (By.XPATH, "//*[@id='root']/div/header/nav/div")
     EXIT_BUTTON = (By.XPATH, "//button[text()='Выход']")
 
+
 # локаторы для контструктора
 class ConstructorLocators:
     LOGIN_TO_ACCOUNT_BUTTON = (By.XPATH, "//button[text()='Войти в аккаунт']")
