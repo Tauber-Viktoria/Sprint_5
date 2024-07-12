@@ -1,47 +1,33 @@
-from selenium import webdriver
-from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions
 
-from data import password, login
-from locators import LoginLocators, MianLocators
+from locators import MianLocators
 
 
 class TestSectionConstructor:
-    @staticmethod
-    def login(driver):
-        driver.find_element(*LoginLocators.LOGIN_FIELD).send_keys(login)
-        driver.find_element(*LoginLocators.PASSWORD_FIELD).send_keys(password)
-        driver.find_element(*LoginLocators.LOGIN_BUTTON).click()
-        WebDriverWait(driver, 5).until(
-            expected_conditions.visibility_of_element_located(MianLocators.ORDER_BUTTON))
 
     def test_go_to_sections_buns(self, driver):
-        driver = webdriver.Chrome()
         driver.get("https://stellarburgers.nomoreparties.site")
-        driver.find_element(*MianLocators.PERSONAL_ACCOUNT).click()
-        self.login(driver)
-
         driver.find_element(*MianLocators.SAUCES).click()
         driver.find_element(*MianLocators.BUNS).click()
+        WebDriverWait(driver, 5).until(
+            expected_conditions.visibility_of_element_located(MianLocators.BUNS_ELEMENT))
 
-        driver.quit()
+        assert driver.find_element(*MianLocators.BUNS_ELEMENT)
 
     def test_go_to_sections_sauces(self, driver):
-        driver = webdriver.Chrome()
         driver.get("https://stellarburgers.nomoreparties.site")
-        driver.find_element(*MianLocators.PERSONAL_ACCOUNT).click()
-        self.login(driver)
-
         driver.find_element(*MianLocators.SAUCES).click()
+        WebDriverWait(driver, 5).until(
+            expected_conditions.visibility_of_element_located(MianLocators.SAUCES_ELEMENT))
 
-        driver.quit()
+        assert driver.find_element(*MianLocators.SAUCES_ELEMENT)
 
     def test_go_to_sections_fillings(self, driver):
-        driver = webdriver.Chrome()
         driver.get("https://stellarburgers.nomoreparties.site")
-        driver.find_element(*MianLocators.PERSONAL_ACCOUNT).click()
-        self.login(driver)
-
         driver.find_element(*MianLocators.FILLINGS).click()
+        WebDriverWait(driver, 5).until(
+            expected_conditions.visibility_of_element_located(MianLocators.FILLINGS_ELEMENT))
 
-        driver.quit()
+        assert driver.find_element(*MianLocators.FILLINGS_ELEMENT)

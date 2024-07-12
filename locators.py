@@ -32,6 +32,9 @@ class MianLocators:
     SAUCES = (By.XPATH, "//span[text()='Соусы']")
     BUNS = (By.XPATH, "//span[text()='Булки']")
     FILLINGS = (By.XPATH, "//span[text()='Начинки']")
+    BUNS_ELEMENT = (By.XPATH, "//img[@alt='Флюоресцентная булка R2-D3']")
+    SAUCES_ELEMENT = (By.XPATH, "//img[@alt='Соус Spicy-X']")
+    FILLINGS_ELEMENT = (By.XPATH, "//img[@alt='Мясо бессмертных моллюсков Protostomia']")
 
 
 # локаторы для страницы личного кабинета
