@@ -29,14 +29,14 @@ class MianLocators:
     LOGIN_TO_ACCOUNT_BUTTON = (By.XPATH, "//button[text()='Войти в аккаунт']")
     ORDER_BUTTON = (By.XPATH, "//button[text()='Оформить заказ']")
     PERSONAL_ACCOUNT = (By.XPATH, "//p[text()='Личный Кабинет']")
-    SAUCES = (By.XPATH, '//*[@id="root"]/div/main/section[1]/div[1]/div[2]/span')
-    BUNS = (By.XPATH, '//*[@id="root"]/div/main/section[1]/div[1]/div[1]/span')
-    FILLINGS = (By.XPATH, '//*[@id="root"]/div/main/section[1]/div[1]/div[3]/span')
+    SAUCES = (By.XPATH, "//span[text()='Соусы']")
+    BUNS = (By.XPATH, "//span[text()='Булки']")
+    FILLINGS = (By.XPATH, "//span[text()='Начинки']")
 
 
 # локаторы для страницы личного кабинета
 class PersonalAccountLocators:
     PROFILE = (By.XPATH, "//a[text()='Профиль']")
     CONSTRUCTOR = (By.XPATH, "//p[text()='Конструктор']")
-    LOGO = (By.XPATH, "//*[@id='root']/div/header/nav/div")
+    LOGO = (By.XPATH, "//div[contains(@class, 'header__logo')]")
     EXIT_BUTTON = (By.XPATH, "//button[text()='Выход']")
