@@ -3,7 +3,7 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
 from helper_tests import RandomMail
-from locators import RegistrationLocators
+from locators import RegistrationLocators, LoginLocators
 
 
 class TestRegistration:
@@ -17,7 +17,7 @@ class TestRegistration:
         driver.find_element(*RegistrationLocators.REGISTRATION_BUTTON).click()
 
         WebDriverWait(driver, 5).until(
-            expected_conditions.visibility_of_element_located(RegistrationLocators.LOGIN_BUTTON))
+            expected_conditions.visibility_of_element_located(LoginLocators.LOGIN_BUTTON))
 
         assert driver.current_url == 'https://stellarburgers.nomoreparties.site/login'
         driver.quit()
