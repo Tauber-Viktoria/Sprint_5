@@ -8,7 +8,6 @@ from locators import RegistrationLocators, LoginLocators
 
 class TestRegistration:
     def test_successful_registration(self, driver):
-        driver = webdriver.Chrome()
         driver.get("https://stellarburgers.nomoreparties.site/register")
         email = RandomMail.generate_mail()
         driver.find_element(*RegistrationLocators.NAME_FIELD).send_keys("some")
@@ -20,10 +19,8 @@ class TestRegistration:
             expected_conditions.visibility_of_element_located(LoginLocators.LOGIN_BUTTON))
 
         assert driver.current_url == 'https://stellarburgers.nomoreparties.site/login'
-        driver.quit()
 
     def test_registration_password_error(self, driver):
-        driver = webdriver.Chrome()
         driver.get("https://stellarburgers.nomoreparties.site/register")
         email = RandomMail.generate_mail()
         driver.find_element(*RegistrationLocators.NAME_FIELD).send_keys("some")
@@ -35,4 +32,3 @@ class TestRegistration:
             expected_conditions.visibility_of_element_located(RegistrationLocators.ERROR_MESSAGE))
 
         assert error_message.text == 'Некорректный пароль'
-        driver.quit()
