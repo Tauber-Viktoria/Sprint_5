@@ -1,33 +1,27 @@
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions
 
-from locators import MianLocators
+from locators import MainLocators
 
 
 class TestSectionConstructor:
 
     def test_go_to_sections_buns(self, driver):
         driver.get("https://stellarburgers.nomoreparties.site")
-        driver.find_element(*MianLocators.SAUCES).click()
-        driver.find_element(*MianLocators.BUNS).click()
-        WebDriverWait(driver, 5).until(
-            expected_conditions.visibility_of_element_located(MianLocators.BUNS_ELEMENT))
+        driver.find_element(*MainLocators.SAUCES).click()
+        driver.find_element(*MainLocators.BUNS).click()
 
-        assert driver.find_element(*MianLocators.BUNS_ELEMENT)
+        buns_element = driver.find_element(*MainLocators.BUNS_ELEMENT)
+        assert "current" in buns_element.get_attribute("class")
 
     def test_go_to_sections_sauces(self, driver):
         driver.get("https://stellarburgers.nomoreparties.site")
-        driver.find_element(*MianLocators.SAUCES).click()
-        WebDriverWait(driver, 5).until(
-            expected_conditions.visibility_of_element_located(MianLocators.SAUCES_ELEMENT))
+        driver.find_element(*MainLocators.SAUCES).click()
 
-        assert driver.find_element(*MianLocators.SAUCES_ELEMENT)
+        sauces_element = driver.find_element(*MainLocators.SAUCES_ELEMENT)
+        assert "current" in sauces_element.get_attribute("class")
 
     def test_go_to_sections_fillings(self, driver):
         driver.get("https://stellarburgers.nomoreparties.site")
-        driver.find_element(*MianLocators.FILLINGS).click()
-        WebDriverWait(driver, 5).until(
-            expected_conditions.visibility_of_element_located(MianLocators.FILLINGS_ELEMENT))
+        driver.find_element(*MainLocators.FILLINGS).click()
 
-        assert driver.find_element(*MianLocators.FILLINGS_ELEMENT)
+        fillings_element = driver.find_element(*MainLocators.FILLINGS_ELEMENT)
+        assert "current" in fillings_element.get_attribute("class")

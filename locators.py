@@ -25,16 +25,16 @@ class ResetPasswordLocators:
 
 
 # локаторы для главной страницы
-class MianLocators:
+class MainLocators:
     LOGIN_TO_ACCOUNT_BUTTON = (By.XPATH, "//button[text()='Войти в аккаунт']")
     ORDER_BUTTON = (By.XPATH, "//button[text()='Оформить заказ']")
     PERSONAL_ACCOUNT = (By.XPATH, "//p[text()='Личный Кабинет']")
     SAUCES = (By.XPATH, "//span[text()='Соусы']")
     BUNS = (By.XPATH, "//span[text()='Булки']")
     FILLINGS = (By.XPATH, "//span[text()='Начинки']")
-    BUNS_ELEMENT = (By.XPATH, "//img[@alt='Флюоресцентная булка R2-D3']")
-    SAUCES_ELEMENT = (By.XPATH, "//img[@alt='Соус Spicy-X']")
-    FILLINGS_ELEMENT = (By.XPATH, "//img[@alt='Мясо бессмертных моллюсков Protostomia']")
+    SAUCES_ELEMENT = (By.XPATH, "//div[contains(@class, 'tab_tab__1SPyG') and contains(., 'Соусы')]")
+    BUNS_ELEMENT = (By.XPATH, "//div[contains(@class, 'tab_tab__1SPyG') and contains(., 'Булки')]")
+    FILLINGS_ELEMENT = (By.XPATH, "//div[contains(@class, 'tab_tab__1SPyG') and contains(., 'Начинки')]")
 
 
 # локаторы для страницы личного кабинета
